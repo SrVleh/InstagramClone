@@ -12,6 +12,12 @@ body {
   height: 100%;
 }
 
+img {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 
 .home-sections {
   height: 100%;
@@ -94,4 +100,17 @@ body {
   right: 5%;
   transform: translate(-50%, -50%);
   text-shadow: 1px 1px 10px #000000a6;
+}
+
+.profile-edit-btn {
+  background-color: rgb(248, 248, 248);
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  border-left: solid #000 3px;
+}
+
+.profile-edit-btn:hover {
+  background-color: rgb(248, 248, 248);
+  color: #000;
 }
