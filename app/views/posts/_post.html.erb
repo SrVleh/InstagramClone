@@ -16,17 +16,19 @@
         </div>
 
         <div>
-          <div class="dropdown">
-            <a class="text-dark fs-4" style="text-decoration:none" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              ...
-            </a>
+          <% if current_user == post.user %>
+            <div class="dropdown">
+              <a class="text-dark fs-4" style="text-decoration:none" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                ...
+              </a>
 
-            <ul class="dropdown-menu">
-              <li>
-                <%= button_to 'Delete post', post, method: :delete, class:"dropdown-item" %>
-              </li>
-            </ul>
-          </div>
+              <ul class="dropdown-menu">
+                <li>
+                  <%= button_to 'Delete post', post, method: :delete, class:"dropdown-item" %>
+                </li>
+              </ul>
+            </div>
+          <% end %>
         </div>
 
       </div>
@@ -50,7 +52,7 @@
           <span class="visually-hidden">Next</span>
         </button>
         <div class="carousel-indicators" style="position:static">
-          <% post.images.each_with_index do |img, i| %>
+          <% post.images.each_with_index do |_, i| %>
             <button type="button" data-bs-target="#post<%= post.id %>_images" data-bs-slide-to="<%= i %>" class=" bg-dark <%= i==0 ?  'active' : '' %>" <%= i==0 ? 'aria-current="true"' : '' %> aria-label="Slide <%= i+1 %>"></button>
           <% end %>
         </div>
